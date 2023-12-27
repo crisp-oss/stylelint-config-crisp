@@ -25,7 +25,7 @@ module.exports = {
         "ignore": ["after-comment", "blockless-after-blockless"],
         "ignoreAtRules": ["else"]
       }
-    ]
+    ],
     "block-no-empty": true,
     "color-function-notation": "legacy",
     "color-hex-length": "long",
