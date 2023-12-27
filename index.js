@@ -39,7 +39,7 @@ module.exports = {
       "border-right": ["none"],
       "border-bottom": ["none"],
       "border-left": ["none"]
-    }
+    },
     "number-max-precision": 5,
     "selector-class-pattern": null,
     "selector-pseudo-class-no-unknown": [
