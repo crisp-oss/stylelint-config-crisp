@@ -16,10 +16,12 @@ module.exports = {
   ],
 
   rules: {
+    // General rules
+    "alpha-value-notation": "number",
+    "block-no-empty": true,
     "color-function-notation": "legacy",
     "color-hex-length": "long",
-    "selector-class-pattern": null,
-
+    "color-no-invalid-hex": true,
     "declaration-block-no-redundant-longhand-properties": [
       true,
 
@@ -30,6 +32,16 @@ module.exports = {
         ]
       }
     ],
+    "declaration-block-single-line-max-declarations": 1,
+    "declaration-property-value-disallowed-list": {
+      "border": ["none"],
+      "border-top": ["none"],
+      "border-right": ["none"],
+      "border-bottom": ["none"],
+      "border-left": ["none"]
+    }
+    "number-max-precision": 5,
+    "selector-class-pattern": null,
     "selector-pseudo-class-no-unknown": [
       true,
 
@@ -39,25 +51,15 @@ module.exports = {
         ]
       }
     ],
-
-    "alpha-value-notation": "number",
-    "number-max-precision": 5,
     "selector-pseudo-element-colon-notation": "single",
 
-    "scss/operator-no-newline-after": null,
+    // SCSS rules
+    "scss/at-rule-conditional-no-parentheses": null,
     "scss/dollar-variable-empty-line-before": null,
     "scss/no-global-function-names": null,
-    "scss/at-rule-conditional-no-parentheses": null,
+    "scss/operator-no-newline-after": null,
 
-    "@stylistic/declaration-colon-newline-after": null,
-    "@stylistic/declaration-block-trailing-semicolon": "always",
-    "@stylistic/selector-pseudo-class-case": "lower",
-    "@stylistic/selector-pseudo-element-case": "lower",
-    "@stylistic/property-case": "lower",
-    "@stylistic/unit-case": "lower",
-    "@stylistic/color-hex-case": "lower",
-    "@stylistic/number-leading-zero": "always",
-    "@stylistic/string-quotes": "double",
+    // Stylistic rules
     "@stylistic/block-closing-brace-newline-after": [
       "always",
 
@@ -65,7 +67,9 @@ module.exports = {
         "ignoreAtRules": ["if", "else"]
       }
     ],
-
+    "@stylistic/color-hex-case": "lower",
+    "@stylistic/declaration-colon-newline-after": null,
+    "@stylistic/declaration-block-trailing-semicolon": "always",
     "@stylistic/indentation": [
       2,
 
@@ -73,7 +77,14 @@ module.exports = {
         "ignore": ["inside-parens"]
       }
     ],
+    "@stylistic/number-leading-zero": "always",
+    "@stylistic/property-case": "lower",
+    "@stylistic/selector-pseudo-class-case": "lower",
+    "@stylistic/selector-pseudo-element-case": "lower",
+    "@stylistic/string-quotes": "double",
+    "@stylistic/unit-case": "lower",
 
+    // Order rules
     "order/order": [
       "dollar-variables",
       "declarations",
