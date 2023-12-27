@@ -55,6 +55,7 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 #### SCSS rules
 - [scss/at-rule-conditional-no-parentheses](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-rule-conditional-no-parentheses): Rule is **disabled** to allow parentheses in conditional at-rules (if, elsif, while)
 - [scss/dollar-variable-empty-line-before](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/dollar-variable-empty-line-before): Rule is **disabled** to allow empty lines between logical variable blocks
+- [scss/load-no-partial-leading-underscore](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/load-no-partial-leading-underscore): Rule is **disabled** to allow `@import`-ing files with underscore in their name
 - [scss/no-global-function-names](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/no-global-function-names): Rule is **disabled** to keep using global function names, instead of the new built-in module system
 - [scss/operator-no-newline-after](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/operator-no-newline-after): Rule is **disabled** to allow linebreaks after Sass operators
 
@@ -74,6 +75,9 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 
 #### Order rules
 - [order/order](https://github.com/hudochenkov/stylelint-order/tree/master/rules/order): Enforces the order of content within declaration blocks: dollar variables, then declarations, then nested rules
+
+#### Crisp rules
+- [at-rule-conditional-parentheses](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/at-rule-conditional-parentheses.js): Enforces parentheses in conditions of at-rules (`@if`, `@elseif`, `@while`)
 
 ## License
 
