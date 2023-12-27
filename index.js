@@ -13,6 +13,7 @@ module.exports = {
 
   plugins: [
     "./rules/at-rule-conditional-parentheses",
+    "./rules/rule-empty-line-before",
 
     "stylelint-order"
   ],
@@ -54,6 +55,14 @@ module.exports = {
     },
     "keyframe-block-no-duplicate-selectors": null,
     "number-max-precision": 5,
+    "rule-empty-line-before": [
+      "always-multi-line",
+
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
     "selector-class-pattern": null,
     "selector-pseudo-class-no-unknown": [
       true,
@@ -107,6 +116,7 @@ module.exports = {
     ],
 
     // Crisp rules
-    "crisp/at-rule-conditional-parentheses": true
+    "crisp/at-rule-conditional-parentheses": true,
+    "crisp/rule-empty-line-before": true
   }
 }

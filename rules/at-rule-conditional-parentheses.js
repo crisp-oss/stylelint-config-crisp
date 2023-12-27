@@ -9,7 +9,7 @@ const ruleFunction = (primaryOption, secondaryOptions, context) => {
   return (root, result) => {
     const validOptions = stylelint.utils.validateOptions(result, ruleName, {
       actual: primaryOption,
-      possible: [true, false],
+      possible: [true]
     });
 
     if (!validOptions) {
@@ -23,7 +23,7 @@ const ruleFunction = (primaryOption, secondaryOptions, context) => {
             ruleName,
             result,
             node: rule,
-            message: messages.expected,
+            message: messages.expected
           });
         }
       }

@@ -48,6 +48,9 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
   * `outline: none` is disallowed (prefer `0`, for consistency)
 - [keyframe-block-no-duplicate-selectors](https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors/): Rule is **disabled**, in order to allow cascade selectors within keyframe blocks (seems they are not supported by this rule, yet)
 - [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision/): Allows a maximum of 5 decimal places in numbers
+- [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/): Requires an empty line before multi-line rules
+  * `"first-nested"` is reversed (for rules that are nested and the first child of their parent node, we don't want any empty line)
+  * `"after-comment"` is ignored (for rules that follow a comment)
 - [selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern/): Rule is **disabled** as it conflicts with our BEM notation in class selectors
 - [selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown/): Disallows unknown pseudo-class selectors
 - [selector-pseudo-element-colon-notation](https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation/): Pseudo-elements must use the single colon notation
@@ -79,6 +82,7 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 
 #### Crisp rules
 - [at-rule-conditional-parentheses](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/at-rule-conditional-parentheses.js): Enforces parentheses in conditions of at-rules (`@if`, `@elseif`, `@while`)
+- [rule-empty-line-before](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/rule-empty-line-before.js): Requires an empty line before multi-line rules the same way [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) does, but properly handles Sass interpolation `#{}` in selectors
 
 ## License
 
