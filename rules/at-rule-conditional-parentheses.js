@@ -2,7 +2,7 @@ const stylelint = require("stylelint");
 
 const ruleName = "crisp/at-rule-conditional-parentheses";
 const messages = stylelint.utils.ruleMessages(ruleName, {
-  expected: "Expected parentheses in \"@if\" and \"@else-if\" statements",
+  expected: "Expected parentheses in \"@if\", \"@else-if\" and \"@while\" statements",
 });
 
 const ruleFunction = (primaryOption, secondaryOptions, context) => {

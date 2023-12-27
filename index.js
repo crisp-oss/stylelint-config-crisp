@@ -70,6 +70,7 @@ module.exports = {
     "scss/at-rule-conditional-no-parentheses": null,
     "scss/dollar-variable-empty-line-before": null,
     "scss/load-no-partial-leading-underscore": null,
+    "scss/map-keys-quotes": "always",
     "scss/no-global-function-names": null,
     "scss/operator-no-newline-after": null,
 
