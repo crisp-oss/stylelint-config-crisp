@@ -49,6 +49,7 @@ module.exports = {
       "border-left": ["none"],
       "outline": ["none"]
     },
+    "keyframe-block-no-duplicate-selectors": null,
     "number-max-precision": 5,
     "selector-class-pattern": null,
     "selector-pseudo-class-no-unknown": [

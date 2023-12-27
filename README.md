@@ -46,6 +46,7 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 - [declaration-property-value-disallowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list/): A list of disallowed property and value pairs within declaration
   * `^border: none` is disallowed (prefer `0`, for consistency)
   * `outline: none` is disallowed (prefer `0`, for consistency)
+- [keyframe-block-no-duplicate-selectors](https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors/): Rule is **disabled**, in order to allow cascade selectors within keyframe blocks (seems they are not supported by this rule, yet)
 - [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision/): Allows a maximum of 5 decimal places in numbers
 - [selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern/): Rule is **disabled** as it conflicts with our BEM notation in class selectors
 - [selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown/): Disallows unknown pseudo-class selectors
