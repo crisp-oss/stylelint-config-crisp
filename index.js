@@ -18,6 +18,14 @@ module.exports = {
   rules: {
     // General rules
     "alpha-value-notation": "number",
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["blockless-after-same-name-blockless", "first-nested"],
+        "ignore": ["after-comment", "blockless-after-blockless"],
+        "ignoreAtRules": ["else"]
+      }
+    ]
     "block-no-empty": true,
     "color-function-notation": "legacy",
     "color-hex-length": "long",

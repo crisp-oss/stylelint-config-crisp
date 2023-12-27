@@ -17,7 +17,7 @@ Just extend this configuration in your Stylelint config object:
 
 ## Documentation
 
-This is a list of configured syntaxes, plugins and rules used by Stylelint Config Crisp, and what they do.
+This is the list of configured syntaxes, plugins and rules used by Stylelint Config Crisp, and what they do.
 
 ### Custom syntaxes
 - [postcss-html](https://github.com/ota-meshi/postcss-html): allows to parse `<style>` tags from Vue files
@@ -33,6 +33,8 @@ This is a list of configured syntaxes, plugins and rules used by Stylelint Confi
 
 #### General rules
 - [alpha-value-notation](https://stylelint.io/user-guide/rules/alpha-value-notation/): Alpha-values must use the number notation (instead of the percentage notation)
+- [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before/): Requires an empty line before at-rules
+  * `blockless` at-rules are ignored (usefull for root `.scss` files with a lot of `@import` rules, organized in different groups)
 - [block-no-empty](https://stylelint.io/user-guide/rules/block-no-empty/): Disallows empty blocks
 - [color-function-notation](https://stylelint.io/user-guide/rules/color-function-notation/): Color functions must use legacy notation (`rgba(12, 122, 231, 0.2)` instead of `rgb(12 122 231 / 0.2)`)
 - [color-hex-length](https://stylelint.io/user-guide/rules/color-hex-length/): Hex colors must use long notation
