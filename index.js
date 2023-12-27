@@ -12,6 +12,8 @@ module.exports = {
   ],
 
   plugins: [
+    "./rules/at-rule-conditional-parentheses",
+
     "stylelint-order"
   ],
 
@@ -36,7 +38,8 @@ module.exports = {
       {
         "ignoreShorthands": [
           "inset",
-          "overflow"
+          "overflow",
+          "place-self"
         ]
       }
     ],
@@ -99,6 +102,9 @@ module.exports = {
       "dollar-variables",
       "declarations",
       "rules"
-    ]
+    ],
+
+    // Crisp rules
+    "crisp/at-rule-conditional-parentheses": true
   }
 }
