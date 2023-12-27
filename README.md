@@ -43,6 +43,7 @@ This is a list of configured syntaxes, plugins and rules used by Stylelint Confi
 - [declaration-block-single-line-max-declarations](https://stylelint.io/user-guide/rules/declaration-block-single-line-max-declarations/): Allows only 1 declaration per line
 - [declaration-property-value-disallowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list/): A list of disallowed property and value pairs within declaration
   * `^border: none` is disallowed (prefer `0`, for consistency)
+  * `outline: none` is disallowed (prefer `0`, for consistency)
 - [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision/): Allows a maximum of 5 decimal places in numbers
 - [selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern/): Rule is **disabled** as it conflicts with our BEM notation in class selectors
 - [selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown/): Disallows unknown pseudo-class selectors
