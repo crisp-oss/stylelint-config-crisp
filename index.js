@@ -12,7 +12,7 @@ module.exports = {
   ],
 
   plugins: [
-    "stylelint-selector-bem-pattern"
+    "stylelint-order"
   ],
 
   rules: {
@@ -72,6 +72,12 @@ module.exports = {
       {
         "ignore": ["inside-parens"]
       }
+    ],
+
+    "order/order": [
+      "dollar-variables",
+      "declarations",
+      "rules"
     ]
   }
 }
