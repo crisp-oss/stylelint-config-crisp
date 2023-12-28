@@ -54,6 +54,7 @@ module.exports = {
       "outline": ["none"]
     },
     "keyframe-block-no-duplicate-selectors": null,
+    "no-descending-specificity": null
     "number-max-precision": 5,
     "rule-empty-line-before": [
       "always-multi-line",
@@ -64,6 +65,7 @@ module.exports = {
       }
     ],
     "selector-class-pattern": null,
+    "selector-not-notation": "simple",
     "selector-pseudo-class-no-unknown": [
       true,
 

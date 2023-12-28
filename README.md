@@ -48,10 +48,12 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
   * `outline: none` is disallowed (prefer `0`, for consistency)
 - [keyframe-block-no-duplicate-selectors](https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors/): Rule is **disabled**, in order to allow cascade selectors within keyframe blocks (seems they are not supported by this rule, yet)
 - [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision/): Allows a maximum of 5 decimal places in numbers
+- [no-descending-specificity](https://stylelint.io/user-guide/rules/no-descending-specificity/): Rule is **disabled**, as we do not want to check source order
 - [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/): Requires an empty line before multi-line rules
   * `"first-nested"` is reversed (for rules that are nested and the first child of their parent node, we don't want any empty line)
   * `"after-comment"` is ignored (for rules that follow a comment)
 - [selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern/): Rule is **disabled** as it conflicts with our BEM notation in class selectors
+- [selector-not-notation](https://stylelint.io/user-guide/rules/selector-not-notation/): Enforces simple notation for `:not()` pseudo-class selectors
 - [selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown/): Disallows unknown pseudo-class selectors
 - [selector-pseudo-element-colon-notation](https://stylelint.io/user-guide/rules/selector-pseudo-element-colon-notation/): Pseudo-elements must use the single colon notation
 
