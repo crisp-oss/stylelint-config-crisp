@@ -17,8 +17,21 @@ const ruleFunction = (primaryOption, secondaryOptions, context) => {
     }
 
     root.walkAtRules((rule) => {
-      if (["if", "else-if", "while"].includes(rule.name)) {
-        if (!rule.params.startsWith("(") || !rule.params.endsWith(")")) {
+      let elseIf = false;
+
+      // An `@else if` is a regular `@else` with `if` in its params
+      if (rule.name === "else" && rule.params.startsWith("if ")) {
+        elseIf = true;
+      }
+
+      if (["if", "while"].includes(rule.name) || elseIf === true) {
+        let params = rule.params;
+
+        if (elseIf === true) {
+          params = params.slice(3);
+        }
+
+        if (!params.startsWith("(") || !params.endsWith(")")) {
           stylelint.utils.report({
             ruleName,
             result,
