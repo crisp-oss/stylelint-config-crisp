@@ -54,7 +54,7 @@ module.exports = {
       "outline": ["none"]
     },
     "keyframe-block-no-duplicate-selectors": null,
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
     "number-max-precision": 5,
     "rule-empty-line-before": [
       "always-multi-line",
