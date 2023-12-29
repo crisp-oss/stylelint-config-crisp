@@ -55,6 +55,7 @@ module.exports = {
       "outline": ["none"]
     },
     "keyframe-block-no-duplicate-selectors": null,
+    "media-feature-range-notation": "prefix",
     "no-descending-specificity": null,
     "number-max-precision": 5,
     "rule-empty-line-before": [
