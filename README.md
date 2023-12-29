@@ -85,6 +85,7 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 #### Crisp rules
 - [at-rule-conditional-parentheses](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/at-rule-conditional-parentheses.js): Enforces parentheses in conditions of at-rules (`@if`, `@elseif`, `@while`)
 - [rule-empty-line-before](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/rule-empty-line-before.js): Requires an empty line before multi-line rules the same way [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) does, but properly handles Sass interpolation `#{}` in selectors
+- [selector-class-interpolation](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/selector-class-interpolation.js): Enforces class selectors to use Sass interpolation
 
 ## License
 

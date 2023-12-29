@@ -14,6 +14,7 @@ module.exports = {
   plugins: [
     "./rules/at-rule-conditional-parentheses",
     "./rules/rule-empty-line-before",
+    "./rules/selector-class-interpolation",
 
     "stylelint-order"
   ],
@@ -119,6 +120,7 @@ module.exports = {
 
     // Crisp rules
     "crisp/at-rule-conditional-parentheses": true,
-    "crisp/rule-empty-line-before": true
+    "crisp/rule-empty-line-before": true,
+    "crisp/selector-class-interpolation": true
   }
 }
