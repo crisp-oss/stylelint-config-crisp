@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-crisp",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Custom Stylelint Rules for Crisp",
   "author": "Crisp IM SAS",
   "main": "index.js",

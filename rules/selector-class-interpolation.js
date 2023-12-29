@@ -40,7 +40,20 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
 
       // Determine if the resolved selector should be ignored
       const isIgnored = ignoreSelectors.some(ignoreItem => {
-        return isRegExp(ignoreItem) ? ignoreItem.test(resolvedSelector) : ignoreItem === resolvedSelector;
+        if (typeof ignoreItem === "string") {
+          // Check if it's a stringified regex (e.g., "/pattern/")
+          if (ignoreItem.startsWith("/") && ignoreItem.endsWith("/")) {
+            const regexPattern = ignoreItem.slice(1, -1);
+            const regex = new RegExp(regexPattern);
+            return regex.test(resolvedSelector);
+          }
+
+          // It's a regular string
+          return ignoreItem === resolvedSelector;
+        }
+
+        // It's a real RegExp
+        return ignoreItem.test(resolvedSelector);
       });
 
       if (isIgnored) {
@@ -85,14 +98,9 @@ function resolveSelector(rule, parentSelector = "") {
   return parentSelector ? (parentSelector + " " + rule.selector).trim() : rule.selector;
 }
 
-// Helper function to check if a value is a RegExp
-function isRegExp(value) {
-  return value instanceof RegExp;
-}
-
 // Helper function to check if a value is a RegExp or a string
 function isStringOrRegExp(value) {
-  return isRegExp(value) || typeof value === "string";
+  return value instanceof RegExp || typeof value === "string";
 }
 
 // Check if the rule is a top-level class selector
