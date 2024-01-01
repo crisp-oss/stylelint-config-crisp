@@ -81,10 +81,16 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
 
       if (!isInterpolated) {
         // Skip classes elements outside of CSS file scope
-        if (fileScopeClass &&
-            rule.selector.startsWith(".") &&
+        if (fileScopeClass) {
+          if (rule.selector.startsWith(".") &&
             !rule.selector.startsWith(`.${fileScopeClass}`)) {
-          return;
+            return;
+          }
+
+          if (rule.selector.startsWith("&.") &&
+            !rule.selector.startsWith(`&.${fileScopeClass}`)) {
+            return;
+          }
         }
 
         if (context.fix) {
