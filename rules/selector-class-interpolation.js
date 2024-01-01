@@ -89,7 +89,7 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
             const match = rule.selector.match(regex);
             const base = match ? match[1] : null;
 
-            if (base !== `.${fileScopeClass}`) {
+            if (base && base !== `.${fileScopeClass}`) {
               return;
             }
           }
