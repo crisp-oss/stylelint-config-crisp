@@ -64,7 +64,7 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
       }
 
       // Skip selector if ignored via rule options
-      if (isSelectorIgnored(rule, secondaryOptions.ignoreSelectors || [])) {
+      if (isSelectorIgnoredOptions(rule, secondaryOptions.ignoreSelectors || [])) {
         return;
       }
 
@@ -80,25 +80,8 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
       let isInterpolated = isInterpolatedClassSelector(rule);
 
       if (!isInterpolated) {
-        // Skip classes elements outside of CSS file scope
-        if (fileScopeClass) {
-          if (rule.selector.startsWith(".")) {
-            // Extract base part from BEM selector
-            const regex = /^(\.[\w-]+?)(?:--|__)[\w-]+$/;
-
-            const match = rule.selector.match(regex);
-            const base = match ? match[1] : null;
-
-            if (base && base !== `.${fileScopeClass}`) {
-              return;
-            }
-          }
-
-          if (rule.selector.startsWith("&.")) {
-            if (!rule.selector.startsWith(`&.${fileScopeClass}`)) {
-              return;
-            }
-          }
+        if (isSelectorIgnored(rule, fileScopeClass)) {
+          return;
         }
 
         if (context.fix) {
@@ -138,7 +121,7 @@ function isStringOrRegExp(value) {
 }
 
 // Check if selector is ignored via options
-function isSelectorIgnored(rule, ignoreSelectors = []) {
+function isSelectorIgnoredOptions(rule, ignoreSelectors = []) {
   // Resolve the actual selector name
   const resolvedSelector = resolveSelector(rule);
 
@@ -161,6 +144,34 @@ function isSelectorIgnored(rule, ignoreSelectors = []) {
   });
 
   return isIgnored;
+}
+
+// Check if selector is ignored (out of file scope)
+function isSelectorIgnored(rule, fileScopeClass) {
+  // Skip classes elements outside of CSS file scope
+  if (fileScopeClass) {
+    if (rule.selector.startsWith(".")) {
+      // Extract base part from BEM selector
+      const regex = /(\.[\w-]+?)(?=--|__|\s|$)/;
+      const match = rule.selector.match(regex);
+
+      if (match) {
+        const base = match[1];
+
+        if (base !== `.${fileScopeClass}`) {
+          return true;
+        }
+      }
+    }
+
+    if (rule.selector.startsWith("&.")) {
+      if (!rule.selector.startsWith(`&.${fileScopeClass}`)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
 
 // Check if the rule is a top-level class selector
