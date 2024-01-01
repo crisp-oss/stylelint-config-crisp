@@ -56,6 +56,7 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
       });
     }
 
+    // Third pass (check all class selectors)
     root.walkRules(rule => {
       // Skip rules without selectors (e.g. @font-face, @keyframes, variables)
       if (!rule.selector) {
@@ -80,7 +81,8 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
 
       if (!isInterpolated) {
         // Skip classes elements outside of CSS file scope
-        if (rule.selector.startsWith(".") &&
+        if (fileScopeClass &&
+            rule.selector.startsWith(".") &&
             !rule.selector.startsWith(`.${fileScopeClass}`)) {
           return;
         }
