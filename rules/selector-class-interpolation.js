@@ -152,7 +152,7 @@ function isSelectorIgnored(rule, fileScopeClass) {
   if (fileScopeClass) {
     if (rule.selector.startsWith(".")) {
       // Extract base part from BEM selector
-      const regex = /(\.[\w-]+?)(?=--|__|\s|$)/;
+      const regex = /(\.[\w-]+?)(?=--|__|\s|:|$)/;
       const match = rule.selector.match(regex);
 
       if (match) {
