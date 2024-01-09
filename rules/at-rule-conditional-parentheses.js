@@ -2,7 +2,7 @@ const stylelint = require("stylelint");
 
 const ruleName = "crisp/at-rule-conditional-parentheses";
 const messages = stylelint.utils.ruleMessages(ruleName, {
-  expected: "Expected parentheses in \"@if\", \"@else-if\" and \"@while\" statements",
+  expected: (rule) => `Expected parentheses in \"@${rule}\" statement`
 });
 
 const ruleFunction = (primaryOption, secondaryOptions, context) => {
@@ -17,10 +17,12 @@ const ruleFunction = (primaryOption, secondaryOptions, context) => {
     }
 
     root.walkAtRules((rule) => {
+      let actualRule = rule.name;
       let elseIf = false;
 
-      // An `@else if` is a regular `@else` with `if` in its params
+      // An `@else if` is a regular `@else` with `if ` in its params
       if (rule.name === "else" && rule.params.startsWith("if ")) {
+        actualRule = "else-if";
         elseIf = true;
       }
 
@@ -36,7 +38,7 @@ const ruleFunction = (primaryOption, secondaryOptions, context) => {
             ruleName,
             result,
             node: rule,
-            message: messages.expected
+            message: messages.expected(actualRule)
           });
         }
       }
