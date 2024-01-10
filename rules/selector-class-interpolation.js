@@ -146,9 +146,9 @@ function isSelectorIgnoredOptions(rule, ignoreSelectors = []) {
   return isIgnored;
 }
 
-// Check if selector is ignored (out of file scope)
+// Check if selector is ignored (this skip classes elements outside of current \
+//   file scope, for example of CSS overrides)
 function isSelectorIgnored(rule, fileScopeClass) {
-  // Skip classes elements outside of CSS file scope
   if (fileScopeClass) {
     if (rule.selector.startsWith(".")) {
       // Extract base part from BEM selector

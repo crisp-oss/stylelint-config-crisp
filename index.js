@@ -13,6 +13,7 @@ module.exports = {
 
   plugins: [
     "./rules/at-rule-conditional-parentheses",
+    "./rules/filename-class-match",
     "./rules/rule-empty-line-before",
     "./rules/selector-class-interpolation",
 
@@ -121,6 +122,7 @@ module.exports = {
 
     // Crisp rules
     "crisp/at-rule-conditional-parentheses": true,
+    "crisp/filename-class-match": true,
     "crisp/rule-empty-line-before": true,
     "crisp/selector-class-interpolation": true
   }
