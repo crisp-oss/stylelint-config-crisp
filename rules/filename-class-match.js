@@ -70,7 +70,19 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
 
 // Convert a string to kebab-case
 function toKebabCase(str) {
-  return str.replace(/([a-z])([A-Z])/g, "$1-$2").replace(/\s+/g, "-").toLowerCase();
+  // Special kebab-case flavor:
+  // * `CheckFailures` gets converted to `check-failures`
+  // * `CheckSMTPFailures` gets converted to `check-smtp-failures`
+  return str
+    // Insert a hyphen between lowercase to uppercase transitions and before \
+    //   a sequence of uppercase letters if followed by lowercase
+    .replace(/([a-z])([A-Z])/g, "$1-$2")
+    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1-$2")
+    // Replace spaces and multiple hyphens with a single hyphen
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    // Convert to lowercase
+    .toLowerCase();
 }
 
 // Check if a value is a string
