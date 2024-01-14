@@ -20,14 +20,21 @@ Just extend this configuration in your Stylelint config object:
 This is the list of configured syntaxes, plugins and rules used by Stylelint Config Crisp, and what they do.
 
 ### Custom syntaxes
-- [postcss-html](https://github.com/ota-meshi/postcss-html): allows to parse `<style>` tags from Vue files
+| Name | Description |
+| :- | :- |
+| [postcss-html](https://github.com/ota-meshi/postcss-html) | Allows to parse `<style>` tags from Vue files |
 
 ### Configurations
-- [@stylistic/stylelint-config](https://github.com/stylelint-stylistic/stylelint-config): A backport of stylistic rules that were deprecated in [Stylelint 15.0.0](https://github.com/stylelint/stylelint/blob/15.0.0/docs/migration-guide/to-15.md)
-- [stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss): Standard rules specific to SCSS syntax
+| Name | Description |
+| :- | :- |
+| [@stylistic/stylelint-config](https://github.com/stylelint-stylistic/stylelint-config) | A backport of stylistic rules that were deprecated in [Stylelint 15.0.0](https://github.com/stylelint/stylelint/blob/15.0.0/docs/migration-guide/to-15.md) |
+| [stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss) | Standard rules specific to SCSS syntax |
+|  |  |
 
 ### Plugins
-- [stylelint-order](https://github.com/hudochenkov/stylelint-order): Order-related linting rules
+| Name | Description |
+| :- | :- |
+| [stylelint-order](https://github.com/hudochenkov/stylelint-order) | Order-related linting rules |
 
 ### Rules
 
