@@ -21,18 +21,19 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 
 ### Custom syntaxes
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [postcss-html](https://github.com/ota-meshi/postcss-html) | Allows to parse `<style>` tags from Vue files |
 
 ### Configurations
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [@stylistic/stylelint-config](https://github.com/stylelint-stylistic/stylelint-config) | A backport of stylistic rules that were deprecated in [Stylelint 15.0.0](https://github.com/stylelint/stylelint/blob/15.0.0/docs/migration-guide/to-15.md) |
 | [stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss) | Standard rules specific to SCSS syntax |
+|  |  |
 
 ### Plugins
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [stylelint-order](https://github.com/hudochenkov/stylelint-order) | Order-related linting rules |
 
 ### Rules
@@ -40,7 +41,7 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 #### General rules
 
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [alpha-value-notation](https://stylelint.io/user-guide/rules/alpha-value-notation/) | Alpha-values must use the number notation (instead of the percentage notation) |
 | [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before/) | Requires an empty line before at-rules <br /> - `blockless` at-rules are ignored (usefull for root `.scss` files with a lot of `@import` rules, organized in different groups) |
 | [block-no-empty](https://stylelint.io/user-guide/rules/block-no-empty/) | Disallows empty blocks |
@@ -63,7 +64,7 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 #### SCSS rules
 
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [scss/at-rule-conditional-no-parentheses](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-rule-conditional-no-parentheses) | Rule is **disabled** to allow parentheses in conditional at-rules (if, elsif, while) |
 | [scss/dollar-variable-empty-line-before](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/dollar-variable-empty-line-before) | Rule is **disabled** to allow empty lines between logical variable blocks |
 | [scss/load-no-partial-leading-underscore](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/load-no-partial-leading-underscore) | Rule is **disabled** to allow `@import`-ing files with underscore in their name |
@@ -74,7 +75,7 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 #### Stylistic rules
 
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [@stylistic/block-closing-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/block-closing-brace-newline-after) | Requires a newline after the closing brace of blocks <br /> - `if` and `else` at-rules are ignored |
 | [@stylistic/color-hex-case](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/color-hex-case) | Enforces lowercase for hex colors |
 | [@stylistic/declaration-colon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/declaration-colon-newline-after) | Rule is **disabled** to allow multi-line decleration without newline after the colon |
@@ -89,13 +90,13 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 #### Order rules
 
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [order/order](https://github.com/hudochenkov/stylelint-order/tree/master/rules/order) | Enforces the order of content within declaration blocks: dollar variables, then declarations, then nested rules |
 
 #### Crisp rules
 
 | Name | Description |
-| :----------------------- | :- |
+| :- | :- |
 | [at-rule-conditional-parentheses](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/at-rule-conditional-parentheses.js) | Enforces parentheses in conditions of at-rules (`@if`, `@elseif`, `@while`) |
 | [filename-class-match](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/filename-class-match.js) | Ensures that class name is derivated from filename (this rule is only applied to Vue files) |
 | [rule-empty-line-before](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/rule-empty-line-before.js) | Requires an empty line before multi-line rules the same way [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) does, but properly handles Sass interpolation `#{}` in selectors |
