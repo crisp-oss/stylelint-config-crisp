@@ -36,19 +36,19 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 | Name | Description |
 | :- | :- |
 | [alpha-value-notation](https://stylelint.io/user-guide/rules/alpha-value-notation/) | Alpha-values must use the number notation (instead of the percentage notation) |
-| [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before/) | Requires an empty line before at-rules <br /> * `blockless` at-rules are ignored (usefull for root `.scss` files with a lot of `@import` rules, organized in different groups) |
+| [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before/) | Requires an empty line before at-rules <br /> - `blockless` at-rules are ignored (usefull for root `.scss` files with a lot of `@import` rules, organized in different groups) |
 | [block-no-empty](https://stylelint.io/user-guide/rules/block-no-empty/) | Disallows empty blocks |
 | [color-function-notation](https://stylelint.io/user-guide/rules/color-function-notation/) | Color functions must use legacy notation (`rgba(12, 122, 231, 0.2)` instead of `rgb(12 122 231 / 0.2)`) |
 | [color-hex-length](https://stylelint.io/user-guide/rules/color-hex-length/) | Hex colors must use long notation |
 | [color-no-invalid-hex](https://stylelint.io/user-guide/rules/color-no-invalid-hex/) | Disallows invalid hex colors |
-| [declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties/) | Disallows redundant longhand properties <br /> * `inset` shorthand is ignored (prefer using the longhand properties `top`, `right`, `bottom` and `left` altogether) <br /> * `overflow` shorthand is ignored (prefer using the longhand properties `overflow-x` and `overflow-y` altogether)|
+| [declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties/) | Disallows redundant longhand properties <br /> - `inset` shorthand is ignored (prefer using the longhand properties `top`, `right`, `bottom` and `left` altogether) <br /> - `overflow` shorthand is ignored (prefer using the longhand properties `overflow-x` and `overflow-y` altogether)|
 | [declaration-block-single-line-max-declarations](https://stylelint.io/user-guide/rules/declaration-block-single-line-max-declarations/) | Allows only 1 declaration per line |
-| [declaration-property-value-disallowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list/) | A list of disallowed property and value pairs within declaration <br /> * `^border: none` is disallowed (prefer `0`, for consistency) <br /> * `outline: none` is disallowed (prefer `0`, for consistency) |
+| [declaration-property-value-disallowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list/) | A list of disallowed property and value pairs within declaration <br /> - `^border: none` is disallowed (prefer `0`, for consistency) <br /> - `outline: none` is disallowed (prefer `0`, for consistency) |
 | [keyframe-block-no-duplicate-selectors](https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors/) | Rule is **disabled**, in order to allow cascade selectors within keyframe blocks (seems they are not supported by this rule, yet) |
 | [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision/) | Allows a maximum of 5 decimal places in numbers |
 | [media-feature-range-notation](https://stylelint.io/user-guide/rules/media-feature-range-notation/) | Media feature ranges must use the `prefix` notation |
 | [no-descending-specificity](https://stylelint.io/user-guide/rules/no-descending-specificity/) | Rule is **disabled**, as we do not want to check source order |
-| [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) | Requires an empty line before multi-line rules <br /> * `"first-nested"` is reversed (for rules that are nested and the first child of their parent node, we don't want any empty line) <br /> * `"after-comment"` is ignored (for rules that follow a comment) |
+| [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) | Requires an empty line before multi-line rules <br /> - `"first-nested"` is reversed (for rules that are nested and the first child of their parent node, we don't want any empty line) <br /> - `"after-comment"` is ignored (for rules that follow a comment) |
 | [selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern/) | Rule is **disabled** as it conflicts with our BEM notation in class selectors |
 | [selector-not-notation](https://stylelint.io/user-guide/rules/selector-not-notation/) | Enforces simple notation for `:not()` pseudo-class selectors |
 | [selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown/) | Disallows unknown pseudo-class selectors |
@@ -69,10 +69,10 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 
 | Name | Description |
 | :- | :- |
-| [@stylistic/block-closing-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/block-closing-brace-newline-after) | Requires a newline after the closing brace of blocks <br /> * `if` and `else` at-rules are ignored |
+| [@stylistic/block-closing-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/block-closing-brace-newline-after) | Requires a newline after the closing brace of blocks <br /> - `if` and `else` at-rules are ignored |
 | [@stylistic/color-hex-case](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/color-hex-case) | Enforces lowercase for hex colors |
 | [@stylistic/declaration-colon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/declaration-colon-newline-after) | Rule is **disabled** to allow multi-line decleration without newline after the colon |
-| [@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/indentation) | Enforces 2-spaces indentation <br /> * Indentation inside parentheses is ignored, as we increment the indentation for multi-line expressions |
+| [@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/indentation) | Enforces 2-spaces indentation <br /> - Indentation inside parentheses is ignored, as we increment the indentation for multi-line expressions |
 | [@stylistic/number-leading-zero](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/number-leading-zero) | Requires a leading zero for fractional numbers less than 1 |
 | [@stylistic/property-case](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/property-case) | Enforces lowercase for properties |
 | [@stylistic/selector-pseudo-class-case](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/selector-pseudo-class-case) | Enforces lowercase for pseudo-class selectors |
