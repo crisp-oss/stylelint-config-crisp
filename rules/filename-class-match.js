@@ -73,11 +73,25 @@ function toKebabCase(str) {
   // Special kebab-case flavor:
   // * `CheckFailures` gets converted to `check-failures`
   // * `CheckSMTPFailures` gets converted to `check-smtp-failures`
+  // * `CheckIPsFailures` gets converted to `check-ips-failures`
+  // * `MonitoringMailerIPs` gets converted to `monitoring-mailer-ips`
+
   return str
-    // Insert a hyphen between lowercase to uppercase transitions and before \
-    //   a sequence of uppercase letters if followed by lowercase
+    // Handle the transition from multiple uppercase letters to one or \
+    //   multiple lowercase letters
+    .replace(/([A-Z]+)([A-Z]+[a-z]+|(?![a-z]))/g, (match, p1, p2) => {
+      // Only one lowercase letter?
+      if (p2.length === 2 && /[a-z]/.test(p2.slice(1))) {
+        // Make one group (this ensures `IPs` gets converted to `ips` \
+        //   and not `i-ps`)
+        return `${p1}${p2}`;
+      }
+
+      // Make two different groups
+      return `${p1}-${p2}`;
+    })
+    // Insert a hyphen between lowercase to uppercase transitions
     .replace(/([a-z])([A-Z])/g, "$1-$2")
-    .replace(/([A-Z]+)([A-Z][a-z])/g, "$1-$2")
     // Replace spaces and multiple hyphens with a single hyphen
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
