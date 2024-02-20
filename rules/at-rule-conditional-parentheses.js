@@ -29,8 +29,14 @@ const ruleFunction = (primaryOption, secondaryOptions, context) => {
       if (["if", "while"].includes(rule.name) || elseIf === true) {
         let params = rule.params;
 
+        // Remove `if `
         if (elseIf === true) {
           params = params.slice(3);
+        }
+
+        // Remove `not `
+        if (params.startsWith("not ")) {
+          params = params.slice(4);
         }
 
         if (!params.startsWith("(") || !params.endsWith(")")) {
