@@ -52,8 +52,8 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
     const { prefix = "", suffix = "" } = secondaryOptions;
     const expectedClassName = `${prefix}${toKebabCase(fileName)}${suffix}`;
 
-    // Skip `index` and `[[*]]` special filenames
-    if (fileName === "index" || fileName.startsWith("[[")) {
+    // Skip `index`, `[*]` and `[[*]]` special filenames
+    if (fileName === "index" || fileName.startsWith("[")) {
       return;
     }
 
