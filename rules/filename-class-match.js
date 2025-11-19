@@ -48,7 +48,11 @@ const ruleFunction = (primaryOption, secondaryOptions = {}, context) => {
       return;
     }
 
-    const fileName = path.basename(root.source.input.file, ".vue");
+    let fileName = path.basename(root.source.input.file, ".vue");
+
+    // Skip .island suffix if present
+    fileName = fileName.replace(".island", "");
+
     const { prefix = "", suffix = "" } = secondaryOptions;
     const expectedClassName = `${prefix}${toKebabCase(fileName)}${suffix}`;
 
