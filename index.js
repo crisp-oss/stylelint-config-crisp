@@ -14,6 +14,8 @@ module.exports = {
   plugins: [
     "./rules/at-rule-conditional-parentheses",
     "./rules/filename-class-match",
+    "./rules/media-queries-comment",
+    "./rules/no-inline-colors",
     "./rules/rule-empty-line-before",
     "./rules/selector-class-interpolation",
 
@@ -35,6 +37,13 @@ module.exports = {
     "color-function-notation": "legacy",
     "color-hex-length": "long",
     "color-no-invalid-hex": true,
+    "custom-property-pattern": [
+      "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+
+      {
+        "message": "Expected CSS variable name to be kebab-case"
+      }
+    ],
     "declaration-block-no-redundant-longhand-properties": [
       true,
 
@@ -123,6 +132,8 @@ module.exports = {
     // Crisp rules
     "crisp/at-rule-conditional-parentheses": true,
     "crisp/filename-class-match": true,
+    "crisp/media-queries-comment": true,
+    "crisp/no-inline-colors": true,
     "crisp/rule-empty-line-before": true,
     "crisp/selector-class-interpolation": true
   }

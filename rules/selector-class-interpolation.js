@@ -165,8 +165,18 @@ function isSelectorIgnored(rule, fileScopeClass) {
     }
 
     if (rule.selector.startsWith("&.")) {
-      if (!rule.selector.startsWith(`&.${fileScopeClass}`)) {
-        return true;
+      const classMatch = rule.selector.match(/^&\.([\w-]+)/);
+
+      if (classMatch) {
+        const className = classMatch[1];
+
+        if (
+          className !== fileScopeClass &&
+          !className.startsWith(`${fileScopeClass}__`) &&
+          !className.startsWith(`${fileScopeClass}--`)
+        ) {
+          return true;
+        }
       }
     }
   }
