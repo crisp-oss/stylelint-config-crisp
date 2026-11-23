@@ -16,6 +16,7 @@ module.exports = {
     "./rules/filename-class-match",
     "./rules/keyframes-comment",
     "./rules/media-queries-comment",
+    "./rules/mixins-comment",
     "./rules/no-inline-colors",
     "./rules/rule-empty-line-before",
     "./rules/selector-class-interpolation",
@@ -135,6 +136,7 @@ module.exports = {
     "crisp/filename-class-match": true,
     "crisp/keyframes-comment": true,
     "crisp/media-queries-comment": true,
+    "crisp/mixins-comment": true,
     "crisp/no-inline-colors": true,
     "crisp/rule-empty-line-before": true,
     "crisp/selector-class-interpolation": true

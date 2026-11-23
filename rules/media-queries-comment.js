@@ -24,5 +24,6 @@ function isBreakpointAtRule(atRule) {
 module.exports = sectionCommentRule(
   "crisp/media-queries-comment",
   "MEDIA-QUERIES",
-  isBreakpointAtRule
+  isBreakpointAtRule,
+  ["mixin"]
 );
