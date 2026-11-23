@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-crisp",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "description": "Custom Stylelint Rules for Crisp",
   "author": "Crisp IM SAS",
   "main": "index.js",
@@ -11,6 +11,9 @@
   },
   "bugs": {
     "url": "https://github.com/crisp-oss/stylelint-config-crisp/issues"
+  },
+  "scripts": {
+    "test": "node --test"
   },
   "dependencies": {
     "@stylistic/stylelint-config": "2.0.0",
