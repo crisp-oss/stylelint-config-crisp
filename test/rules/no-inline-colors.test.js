@@ -1,6 +1,6 @@
 const assert = require("node:assert/strict");
 const { test } = require("node:test");
-const { expectWarnings } = require("./helpers/lint");
+const { expectWarnings } = require("../helpers/lint");
 
 const rule = "no-inline-colors";
 

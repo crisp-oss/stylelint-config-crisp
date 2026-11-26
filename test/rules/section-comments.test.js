@@ -44,7 +44,7 @@ async function lint(code, rule, options = {}) {
     fix: false,
     config: {
       customSyntax: "postcss-html",
-      plugins: [path.resolve(__dirname, `../rules/${rule}.js`)],
+      plugins: [path.resolve(__dirname, `../../rules/${rule}.js`)],
       rules: { [`crisp/${rule}`]: secondary === undefined ? true : [true, secondary] }
     },
     ...lintOptions
@@ -325,7 +325,7 @@ $c: ".component";
   const options = {
     code,
     codeFilename: "Component.vue",
-    config: require("../index")
+    config: require("../../index")
   };
   const fixed = await stylelint.lint({ ...options, fix: true });
   assert.match(fixed.code, /\/\/ --> MIXINS <--\n\n@mixin/);

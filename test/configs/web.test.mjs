@@ -3,7 +3,7 @@ import path from "node:path";
 import test from "node:test";
 import stylelint from "stylelint";
 
-const ROOT_DIR = path.join(import.meta.dirname, "..");
+const ROOT_DIR = path.join(import.meta.dirname, "../..");
 
 const WEB_CONFIG = {
   extends: [path.join(ROOT_DIR, "web.js")]

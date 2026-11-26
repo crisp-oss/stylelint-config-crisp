@@ -1,6 +1,6 @@
 const assert = require("node:assert/strict");
 const { test } = require("node:test");
-const { lint, expectWarnings } = require("./helpers/lint");
+const { lint, expectWarnings } = require("../helpers/lint");
 
 const rule = "selector-class-interpolation";
 const options = { filename: "Component.vue" };
