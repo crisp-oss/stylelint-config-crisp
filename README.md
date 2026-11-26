@@ -36,7 +36,7 @@ Each item has emojis denoting:
 ### Configurations
 | Name | Description | 🟠 | 🟢 |
 | :- | :- | :- | :- |
-| [@stylistic/stylelint-config](https://github.com/stylelint-stylistic/stylelint-config) | A backport of stylistic rules that were deprecated in [Stylelint 15.0.0](https://github.com/stylelint/stylelint/blob/15.0.0/docs/migration-guide/to-15.md) | 🟠 | 🟢 |
+| [@stylistic/stylelint-config](https://github.com/stylelint-stylistic/stylelint-config) | Stylistic rules deprecated in Stylelint 15 | 🟠 | 🟢 |
 | [stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss) | Standard rules specific to SCSS syntax | 🟠 | 🟢 |
 
 ### Plugins
@@ -50,26 +50,26 @@ Each item has emojis denoting:
 
 | Name | Description | 🟠 | 🟢 |
 | :- | :- | :- | :- |
-| [alpha-value-notation](https://stylelint.io/user-guide/rules/alpha-value-notation/) | Alpha-values must use the number notation (instead of the percentage notation) | 🟠 | 🟢 |
-| [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before/) | Requires an empty line before at-rules <br /> - `blockless` at-rules are ignored (usefull for root `.scss` files with a lot of `@import` rules, organized in different groups) | 🟠 | 🟢 |
+| [alpha-value-notation](https://stylelint.io/user-guide/rules/alpha-value-notation/) | Requires number notation for alpha values | 🟠 | 🟢 |
+| [at-rule-empty-line-before](https://stylelint.io/user-guide/rules/at-rule-empty-line-before/) | Requires an empty line before at-rules, except blockless ones | 🟠 | 🟢 |
 | [block-no-empty](https://stylelint.io/user-guide/rules/block-no-empty/) | Disallows empty blocks | 🟠 | 🟢 |
-| [color-function-notation](https://stylelint.io/user-guide/rules/color-function-notation/) | Color functions must use legacy notation (`rgba(12, 122, 231, 0.2)` instead of `rgb(12 122 231 / 0.2)`) | 🟠 | 🟢 |
+| [color-function-notation](https://stylelint.io/user-guide/rules/color-function-notation/) | Requires legacy notation for color functions | 🟠 | 🟢 |
 | [color-hex-length](https://stylelint.io/user-guide/rules/color-hex-length/) | Hex colors must use long notation | 🟠 | 🟢 |
 | [color-no-invalid-hex](https://stylelint.io/user-guide/rules/color-no-invalid-hex/) | Disallows invalid hex colors | 🟠 | 🟢 |
-| [custom-property-pattern](https://stylelint.io/user-guide/rules/custom-property-pattern/) | CSS variables must use kebab-case (`--blue-crisp`, `--grey-90`, `--background-level-0`) | 🟠 | 🟢 |
-| [declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties/) | Disallows redundant longhand properties <br /> - `inset` shorthand is ignored (prefer using the longhand properties `top`, `right`, `bottom` and `left` altogether) <br /> - `overflow` shorthand is ignored (prefer using the longhand properties `overflow-x` and `overflow-y` altogether)| 🟠 | 🟢 |
+| [custom-property-pattern](https://stylelint.io/user-guide/rules/custom-property-pattern/) | Requires kebab-case for CSS variables | 🟠 | 🟢 |
+| [declaration-block-no-redundant-longhand-properties](https://stylelint.io/user-guide/rules/declaration-block-no-redundant-longhand-properties/) | Disallows redundant longhand properties, except for `inset` and `overflow` | 🟠 | 🟢 |
 | [declaration-block-single-line-max-declarations](https://stylelint.io/user-guide/rules/declaration-block-single-line-max-declarations/) | Allows only 1 declaration per line | 🟠 | 🟢 |
-| [declaration-property-value-disallowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list/) | A list of disallowed property and value pairs within declaration <br /> - `^border: none` is disallowed (prefer `0`, for consistency) <br /> - `outline: none` is disallowed (prefer `0`, for consistency) | 🟠 | 🟢 |
+| [declaration-property-value-disallowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-disallowed-list/) | Requires `0` instead of `none` for borders and outlines | 🟠 | 🟢 |
 | [declaration-no-important](https://stylelint.io/user-guide/rules/declaration-no-important/) | Disallows `!important` within declarations |  | 🟢 |
-| [declaration-property-value-allowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-allowed-list/) | `z-index` values must use the `z()` function (or `auto` and `0`), so that stacking layers stay centralized |  | 🟢 |
-| [function-disallowed-list](https://stylelint.io/user-guide/rules/function-disallowed-list/) | Disallows `rgb()`, `rgba()`, `hsl()` and `hsla()` functions: colors must be consumed as CSS variables via `var(--token)` <br /> - Files named `colors.scss` and `reset.scss` are ignored |  | 🟢 |
-| [keyframe-block-no-duplicate-selectors](https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors/) | Rule is **disabled**, in order to allow cascade selectors within keyframe blocks (seems they are not supported by this rule, yet) | 🟠 | 🟢 |
-| [max-nesting-depth](https://stylelint.io/user-guide/rules/max-nesting-depth/) | Allows a maximum nesting depth of 3 <br /> - `@include` and `@media` at-rules are ignored |  | 🟢 |
+| [declaration-property-value-allowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-allowed-list/) | Restricts `z-index` values to `z()`, `auto` and `0` |  | 🟢 |
+| [function-disallowed-list](https://stylelint.io/user-guide/rules/function-disallowed-list/) | Disallows RGB and HSL functions, except in color and reset files |  | 🟢 |
+| [keyframe-block-no-duplicate-selectors](https://stylelint.io/user-guide/rules/keyframe-block-no-duplicate-selectors/) | Rule is **disabled** to allow cascade selectors within keyframes | 🟠 | 🟢 |
+| [max-nesting-depth](https://stylelint.io/user-guide/rules/max-nesting-depth/) | Limits nesting depth to 3, ignoring `@include` and `@media` |  | 🟢 |
 | [media-feature-name-allowed-list](https://stylelint.io/user-guide/rules/media-feature-name-allowed-list/) | Only allows `min-width` (mobile-first), `hover`, `pointer`, `prefers-reduced-motion`, `prefers-contrast` and `forced-colors` media features |  | 🟢 |
 | [number-max-precision](https://stylelint.io/user-guide/rules/number-max-precision/) | Allows a maximum of 5 decimal places in numbers | 🟠 | 🟢 |
 | [media-feature-range-notation](https://stylelint.io/user-guide/rules/media-feature-range-notation/) | Media feature ranges must use the `prefix` notation | 🟠 | 🟢 |
-| [no-descending-specificity](https://stylelint.io/user-guide/rules/no-descending-specificity/) | Rule is **disabled**, as we do not want to check source order | 🟠 | 🟢 |
-| [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) | Requires an empty line before multi-line rules <br /> - `"first-nested"` is reversed (for rules that are nested and the first child of their parent node, we don't want any empty line) <br /> - `"after-comment"` is ignored (for rules that follow a comment) | 🟠 | 🟢 |
+| [no-descending-specificity](https://stylelint.io/user-guide/rules/no-descending-specificity/) | Rule is **disabled** to allow any specificity order | 🟠 | 🟢 |
+| [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) | Requires an empty line before multi-line rules, except first-nested rules and rules after comments | 🟠 | 🟢 |
 | [selector-class-pattern](https://stylelint.io/user-guide/rules/selector-class-pattern/) | Rule is **disabled** as it conflicts with our BEM notation in class selectors | 🟠 | 🟢 |
 | [selector-not-notation](https://stylelint.io/user-guide/rules/selector-not-notation/) | Enforces simple notation for `:not()` pseudo-class selectors | 🟠 | 🟢 |
 | [selector-pseudo-class-no-unknown](https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown/) | Disallows unknown pseudo-class selectors | 🟠 | 🟢 |
@@ -79,21 +79,21 @@ Each item has emojis denoting:
 
 | Name | Description | 🟠 | 🟢 |
 | :- | :- | :- | :- |
-| [scss/at-rule-conditional-no-parentheses](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-rule-conditional-no-parentheses) | Rule is **disabled** to allow parentheses in conditional at-rules (if, elsif, while) | 🟠 | 🟢 |
+| [scss/at-rule-conditional-no-parentheses](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/at-rule-conditional-no-parentheses) | Rule is **disabled** to allow parentheses in conditional at-rules | 🟠 | 🟢 |
 | [scss/dollar-variable-empty-line-before](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/dollar-variable-empty-line-before) | Rule is **disabled** to allow empty lines between logical variable blocks | 🟠 | 🟢 |
-| [scss/load-no-partial-leading-underscore](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/load-no-partial-leading-underscore) | Rule is **disabled** to allow `@import`-ing files with underscore in their name | 🟠 | 🟢 |
+| [scss/load-no-partial-leading-underscore](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/load-no-partial-leading-underscore) | Rule is **disabled** to allow leading underscores in imports | 🟠 | 🟢 |
 | [scss/map-keys-quotes](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/map-keys-quotes) | Requires quoted keys in maps | 🟠 | 🟢 |
-| [scss/no-global-function-names](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/no-global-function-names) | Rule is **disabled** to keep using global function names, instead of the new built-in module system | 🟠 | 🟢 |
+| [scss/no-global-function-names](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/no-global-function-names) | Rule is **disabled** to allow global Sass functions | 🟠 | 🟢 |
 | [scss/operator-no-newline-after](https://github.com/stylelint-scss/stylelint-scss/tree/master/src/rules/operator-no-newline-after) | Rule is **disabled** to allow linebreaks after Sass operators | 🟠 | 🟢 |
 
 #### Stylistic rules
 
 | Name | Description | 🟠 | 🟢 |
 | :- | :- | :- | :- |
-| [@stylistic/block-closing-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/block-closing-brace-newline-after) | Requires a newline after the closing brace of blocks <br /> - `if` and `else` at-rules are ignored | 🟠 | 🟢 |
+| [@stylistic/block-closing-brace-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/block-closing-brace-newline-after) | Requires a newline after closing braces, except for `if` and `else` at-rules | 🟠 | 🟢 |
 | [@stylistic/color-hex-case](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/color-hex-case) | Enforces lowercase for hex colors | 🟠 | 🟢 |
-| [@stylistic/declaration-colon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/declaration-colon-newline-after) | Rule is **disabled** to allow multi-line decleration without newline after the colon | 🟠 | 🟢 |
-| [@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/indentation) | Enforces 2-spaces indentation <br /> - Indentation inside parentheses is ignored, as we increment the indentation for multi-line expressions | 🟠 | 🟢 |
+| [@stylistic/declaration-colon-newline-after](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/declaration-colon-newline-after) | Rule is **disabled** to allow multi-line declarations without a newline after the colon | 🟠 | 🟢 |
+| [@stylistic/indentation](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/indentation) | Enforces 2-space indentation, ignoring parentheses | 🟠 | 🟢 |
 | [@stylistic/number-leading-zero](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/number-leading-zero) | Requires a leading zero for fractional numbers less than 1 | 🟠 | 🟢 |
 | [@stylistic/property-case](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/property-case) | Enforces lowercase for properties | 🟠 | 🟢 |
 | [@stylistic/selector-pseudo-class-case](https://github.com/stylelint-stylistic/stylelint-stylistic/tree/main/lib/rules/selector-pseudo-class-case) | Enforces lowercase for pseudo-class selectors | 🟠 | 🟢 |
@@ -105,20 +105,20 @@ Each item has emojis denoting:
 
 | Name | Description | 🟠 | 🟢 |
 | :- | :- | :- | :- |
-| [order/order](https://github.com/hudochenkov/stylelint-order/tree/master/rules/order) | Enforces the order of content within declaration blocks: dollar variables, then declarations, then nested rules | 🟠 | 🟢 |
+| [order/order](https://github.com/hudochenkov/stylelint-order/tree/master/rules/order) | Orders dollar variables before declarations, then nested rules | 🟠 | 🟢 |
 
 #### Crisp rules
 
 | Name | Description | 🟠 | 🟢 |
 | :- | :- | :- | :- |
 | [at-rule-conditional-parentheses](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/at-rule-conditional-parentheses.js) | Enforces parentheses in conditions of at-rules (`@if`, `@elseif`, `@while`) | 🟠 | 🟢 |
-| [filename-class-match](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/filename-class-match.js) | Ensures that class name is derivated from filename (this rule is only applied to Vue files) | 🟠 | 🟢 |
-| [keyframes-comment](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/keyframes-comment.js) | Requires `// --> KEYFRAMES <--` and an empty line before the first `@keyframes` (including vendor-prefixed variants) in a block, at the same indentation. Ignored anywhere inside `@mixin` definitions | 🟠 | 🟢 |
-| [media-queries-comment](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/media-queries-comment.js) | Requires `// --> MEDIA-QUERIES <--` and an empty line before the first query (`@media`, `@include mq`, size-based `@container`) in a block, at the same indentation. Ignored anywhere inside `@mixin` definitions | 🟠 | 🟢 |
-| [mixins-comment](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/mixins-comment.js) | Requires `// --> MIXINS <--` and an empty line before the first `@mixin` definition in a block, at the same indentation | 🟠 | 🟢 |
-| [no-inline-colors](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/no-inline-colors.js) | Disallows inline colors (hex, named colors, raw `rgb()` / `hsl()`, Sass color functions and `$color-source--*` variables). Colors must be consumed as CSS variables via `rgb(var(--token))`. Files named `colors.scss`, `codemirror.scss`, `fireworks.scss`, `magic-check.scss` and `reset.scss` are ignored | 🟠 | 🟢 |
-| [rule-empty-line-before](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/rule-empty-line-before.js) | Requires an empty line before multi-line rules the same way [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) does, but properly handles Sass interpolation `#{}` in selectors | 🟠 | 🟢 |
-| [selector-class-interpolation](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/selector-class-interpolation.js) | Enforces class selectors to use Sass interpolation (this rule is only applied to Vue files) | 🟠 | 🟢 |
+| [filename-class-match](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/filename-class-match.js) | Requires class names to match the filename in Vue files | 🟠 | 🟢 |
+| [keyframes-comment](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/keyframes-comment.js) | Requires a section comment before keyframes, except inside mixins | 🟠 | 🟢 |
+| [media-queries-comment](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/media-queries-comment.js) | Requires a section comment before media queries, except inside mixins | 🟠 | 🟢 |
+| [mixins-comment](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/mixins-comment.js) | Requires a section comment before mixin definitions | 🟠 | 🟢 |
+| [no-inline-colors](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/no-inline-colors.js) | Disallows inline colors in favor of CSS variables | 🟠 | 🟢 |
+| [rule-empty-line-before](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/rule-empty-line-before.js) | Requires an empty line before multi-line rules, with support for Sass interpolation | 🟠 | 🟢 |
+| [selector-class-interpolation](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/selector-class-interpolation.js) | Requires Sass interpolation in Vue class selectors | 🟠 | 🟢 |
 
 ## License
 
