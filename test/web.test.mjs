@@ -13,7 +13,7 @@ const WEB_CONFIG = {
 async function lint(code, fileName = "component.scss", config = WEB_CONFIG) {
   const { results } = await stylelint.lint({
     code: code,
-    codeFilename: path.join(ROOT_DIR, "tests", fileName),
+    codeFilename: path.join(ROOT_DIR, "test", fileName),
     config: config,
     configBasedir: ROOT_DIR
   });
@@ -197,7 +197,7 @@ test("web config can be restricted to some files using overrides", async () => {
 
     overrides: [
       {
-        files: ["tests/scoped/**/*.scss"],
+        files: ["test/scoped/**/*.scss"],
         extends: [path.join(ROOT_DIR, "web.js")]
       }
     ]
