@@ -13,7 +13,7 @@ The package provides two configurations:
 * `stylelint-config-crisp/web`: base rules, plus stricter rules for web projects
 
 Just extend the desired configuration in your Stylelint config object:
-```json
+```javascript
 {
   "extends": ["stylelint-config-crisp"]
   // OR "extends": ["stylelint-config-crisp/web"]
