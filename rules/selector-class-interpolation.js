@@ -200,7 +200,7 @@ function fixNestedSelector(rule, selector) {
 
   if (selector.startsWith("&__")) {
     // Transform `&__foo` to `#{$c}__foo`
-    selector.replace(/&__([^ ,{]+)/g, "#{$c}__$1");
+    newSelector = newSelector.replace(/&__([^ ,{]+)/g, "#{$c}__$1");
   }
 
   if (selector.startsWith("&-")) {

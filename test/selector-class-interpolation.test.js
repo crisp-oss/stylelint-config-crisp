@@ -92,9 +92,13 @@ test(`${rule}: autofixes nested element suffixes`, async () => {
   assert.match(fixed.code, /#\{\$c\}__item-icon \{\}/);
 });
 
-test(`${rule}: autofixes &__item to #{$c}__item`, {
-  todo: "Existing autofix discards the return value of selector.replace() in fixNestedSelector"
-}, async () => {
+test(`${rule}: autofixes &__item to #{$c}__item`, async () => {
   const fixed = await lint(rule, `${scope}#{$c} { &__item {} }`, { ...options, fix: true });
+  assert.deepEqual(fixed.warnings, []);
   assert.match(fixed.code, /#\{\$c\}__item \{\}/);
+
+  const style = fixed.code.match(/<style lang="scss">([\s\S]*?)<\/style>/)[1];
+  await expectWarnings(rule, style, 0, options);
+  assert.equal((await lint(rule, style, { ...options, fix: true })).code,
+    `<template><div /></template>\n<style lang="scss">\n${style}\n</style>`);
 });
