@@ -20,20 +20,6 @@ Just extend the desired configuration in your Stylelint config object:
 }
 ```
 
-The web configuration can also be restricted to some files only, using `overrides`:
-```json
-{
-  "extends": ["stylelint-config-crisp"],
-
-  "overrides": [
-    {
-      "files": ["src/components/ui/**/*.{scss,vue}"],
-      "extends": ["stylelint-config-crisp/web"]
-    }
-  ]
-}
-```
-
 ## Documentation
 
 This is the list of configured syntaxes, plugins and rules used by Stylelint Config Crisp, and what they do.
