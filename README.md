@@ -8,10 +8,29 @@ A [Stylelint](https://stylelint.io/) configuration that enforces Crisp's CSS rul
 
 ## Usage
 
-Just extend this configuration in your Stylelint config object:
+The package provides two configurations:
+* `stylelint-config-crisp`: base rules for all Crisp projects
+* `stylelint-config-crisp/web`: base rules, plus stricter rules for web projects
+
+Just extend the desired configuration in your Stylelint config object:
 ```json
 {
   "extends": ["stylelint-config-crisp"]
+  // OR "extends": ["stylelint-config-crisp/web"]
+}
+```
+
+The web configuration can also be restricted to some files only, using `overrides`:
+```json
+{
+  "extends": ["stylelint-config-crisp"],
+
+  "overrides": [
+    {
+      "files": ["src/components/ui/**/*.{scss,vue}"],
+      "extends": ["stylelint-config-crisp/web"]
+    }
+  ]
 }
 ```
 
@@ -106,6 +125,18 @@ This is the list of configured syntaxes, plugins and rules used by Stylelint Con
 | [no-inline-colors](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/no-inline-colors.js) | Disallows inline colors (hex, named colors, raw `rgb()` / `hsl()`, Sass color functions and `$color-source--*` variables). Colors must be consumed as CSS variables via `rgb(var(--token))`. Files named `colors.scss`, `codemirror.scss`, `fireworks.scss`, `magic-check.scss` and `reset.scss` are ignored |
 | [rule-empty-line-before](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/rule-empty-line-before.js) | Requires an empty line before multi-line rules the same way [rule-empty-line-before](https://stylelint.io/user-guide/rules/rule-empty-line-before/) does, but properly handles Sass interpolation `#{}` in selectors |
 | [selector-class-interpolation](https://github.com/crisp-oss/stylelint-config-crisp/blob/master/rules/selector-class-interpolation.js) | Enforces class selectors to use Sass interpolation (this rule is only applied to Vue files) |
+
+#### Web rules
+
+These rules are only enabled in the `stylelint-config-crisp/web` configuration.
+
+| Name | Description |
+| :- | :- |
+| [declaration-no-important](https://stylelint.io/user-guide/rules/declaration-no-important/) | Disallows `!important` within declarations |
+| [declaration-property-value-allowed-list](https://stylelint.io/user-guide/rules/declaration-property-value-allowed-list/) | `z-index` values must use the `z()` function (or `auto` and `0`), so that stacking layers stay centralized |
+| [function-disallowed-list](https://stylelint.io/user-guide/rules/function-disallowed-list/) | Disallows `rgb()`, `rgba()`, `hsl()` and `hsla()` functions: colors must be consumed as CSS variables via `var(--token)` <br /> - Files named `colors.scss` and `reset.scss` are ignored |
+| [max-nesting-depth](https://stylelint.io/user-guide/rules/max-nesting-depth/) | Allows a maximum nesting depth of 3 <br /> - `@include` and `@media` at-rules are ignored |
+| [media-feature-name-allowed-list](https://stylelint.io/user-guide/rules/media-feature-name-allowed-list/) | Only allows `min-width` (mobile-first), `hover`, `pointer`, `prefers-reduced-motion`, `prefers-contrast` and `forced-colors` media features |
 
 ## License
 
